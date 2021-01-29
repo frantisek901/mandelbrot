@@ -70,12 +70,30 @@ vals = search.ck(vr = seq(-2.5, 1, 0.01),  # Vector of possible range of real pa
                  vk = seq(0, 10, 1),  # Vector of possible range of exponents in 'c + z^k' 
                  max.steps = 100)  # Maximum number of iterations 
                  # -- if orbit doesn't find fixed point nor orbit exceeds limits, it stops after 'max.steps'
+save(vals, file = "resultsMandelbrot.RData")
 
 # Visualizing data 'vals' -- it is very shy try... not good...
 vals %>% filter(!escaped) %>% arrange(desc(k)) %>% 
   ggplot(aes(x = r, y = i, col = k, size = k)) +
   geom_point() +
   theme_minimal()
+
+# Slicing 'vals'
+sl = 3
+vals %>% filter(!escaped & k == sl) %>% 
+  ggplot(aes(x = r, y = i)) +
+  geom_point(size = 0.1, col = 'steelblue') +
+  theme_minimal()
+
+# Generating tibble with information on points 
+vals2 = search.ck(vr = seq(-0.75, 0.75, 0.01),  # Vector of possible range of real part of 'c'
+                 vi = seq(-1.5, 1.5, 0.01),  # Vector of possible range of imaginary part of 'c'
+                 vk = seq(2, 4, 0.1),  # Vector of possible range of exponents in 'c + z^k' 
+                 max.steps = 100)  # Maximum number of iterations 
+# -- if orbit doesn't find fixed point nor orbit exceeds limits, it stops after 'max.steps'
+
+
+
 
 # TO-DO:
 # 3D visualization of data: x = r, y = i, and  z = k 
