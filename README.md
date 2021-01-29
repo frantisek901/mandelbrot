@@ -16,3 +16,6 @@ Main function 'search.ck()' searches parameter space given by theree vectors (r 
 
 # Ask for help:
 I will be really grateful for help with plotting 'r', 'i' and 'k' in 3D in R.
+  
+With deference,  
+František
