@@ -11,3 +11,8 @@ The famous 2D graph inform us for which coefficients 'c' orbits exceed to infnit
 
 This code adds third dimension -- exponent 'k'. We might generalize classical set, where k==2 to k >= 0 ('k' less than 0 leads quickly to infinity), so the generalized iterative function is:  
 z_n+1 = c + (z_n ^ k); z0 = 0+0i  
+
+Main function 'search.ck()' searches parameter space given by theree vectors (r - range of real part of 'c', i - range of imaginary part of 'c', k - range of exponents) and produces a tibble containing searched values and results (whether orbit finds fixed point, whether orbit exceeds, how many steps does it take).    
+
+# Ask for help:
+I will be really grateful for help with plotting 'r', 'i' and 'k' in 3D in R.
